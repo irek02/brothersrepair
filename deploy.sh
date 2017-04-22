@@ -1,7 +1,11 @@
 #!/bin/bash
 
-git clone https://github.com/irek02/brothersrepair.git
-cp -r brothersrepair/* .
-rm -rf brothersrepair/
-sudo chown -R ubuntu:www-data .
-sudo chmod -R 0755 .
+git clone https://github.com/irek02/brothersrepair.git /tmp/brothersrepair
+
+cp -r /tmp/brothersrepair/html/* /var/www/html
+cp -r /tmp/brothersrepair/assets /var/www/html
+
+sudo chown -R ubuntu:www-data /var/www/html
+sudo chmod -R 0755 /var/www/html
+
+rm -rf /tmp/brothersrepair
